@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLIMS Punjab Driving License Verification & Status Check 2026</title>
+    <meta name="description" content="Verify driving license online in Punjab via DLIMS. Check license status, renewal steps, and traffic police verification guidelines legally.">
+    <link rel="stylesheet" href="../css/style.css?v=3">
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px;">
+            <a href="../index.html" class="logo" style="font-weight: bold; font-size: 20px; text-decoration: none; color: #0f172a;">Pak<span style="color: #2563eb;">SIM Info</span></a>
+            <nav>
+                <ul class="nav-links" style="display: flex; gap: 15px; list-style: none;">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sim-ownership.html">SIM Info</a></li>
+                    <li><a href="dlims-punjab.html" class="active" style="color: #2563eb; font-weight: bold;">DLIMS</a></li>
+                    <li><a href="iesco-bill.html">Utility Bills</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding: 20px 15px;">
+        
+        <!-- Interactive Verification Card -->
+        <div class="card" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+            <h2>DLIMS Driving License Online Verification</h2>
+            <p>Enter your 13-digit CNIC to process license verification steps.</p>
+
+            <input type="text" id="cnicInput" placeholder="Enter CNIC (13 digits without dashes)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <button onclick="startTimer()" class="btn" style="width: 100%; background-color: #2563eb; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Verify License Status</button>
+
+            <!-- Timer Box -->
+            <div id="timerBox" style="display: none; margin-top: 15px; text-align: center; color: #2563eb; font-weight: bold;">
+                Connecting to official DLIMS portal... <span id="countdown">5</span>s
+            </div>
+
+            <!-- Result Box -->
+            <div id="resultBox" style="display: none; margin-top: 15px; background: #e0f2fe; padding: 15px; border-radius: 6px;">
+                <p><strong>Official Steps:</strong> Visit the official DLIMS Punjab portal (<code>dlims.punjab.gov.pk</code>) or open the PK Police app to view real-time license tracking and renewal details.</p>
+            </div>
+        </div>
+
+        <!-- Article Content -->
+        <article class="seo-content-block" style="margin-top: 25px; background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <h2>Complete Guide to DLIMS Online Driving License System</h2>
+            <p>The Driving License Issuance Management System (DLIMS) phase-II automates the process of license issuance, renewal, and tracking across all districts of Punjab, Pakistan.</p>
+
+            <h3>Key Features of DLIMS Verification</h3>
+            <ul>
+                <li><strong>Learner Permit Tracking:</strong> Check current learner permit validity and scheduled test dates.</li>
+                <li><strong>Regular License Status:</strong> Confirm validity for LTV, HTV, Motorcar, and Motorcycle driving permits.</li>
+                <li><strong>e-License Download:</strong> Access your digital driving license via official Punjab Police applications.</li>
+            </ul>
+        </article>
+
+        <!-- FAQs Section -->
+        <section class="seo-content-block" style="margin-top: 25px; background: #ffffff; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+
+            <h3>How can I verify my driving license in Punjab online?</h3>
+            <p>You can verify your driving license by visiting <strong>dlims.punjab.gov.pk</strong> and entering your 13-digit CNIC number under the Verification section.</p>
+
+            <h3>How to download digital driving license in Punjab?</h3>
+            <p>Download the official <strong>DLIMS Punjab app</strong> or visit the web portal to generate a downloadable PDF copy of your verified digital driving license.</p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 40px; background-color: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p style="margin-bottom: 10px;">
+                <a href="../pages/about.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">About Us</a> | 
+                <a href="../pages/privacy-policy.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Privacy Policy</a> | 
+                <a href="../pages/disclaimer.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Disclaimer</a> | 
+                <a href="../pages/contact.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Contact Us</a>
+            </p>
+            <p style="color: #94a3b8; font-size: 13px;">&copy; 2026 Pak SIM Info. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Timer -->
+    <script>
+        function startTimer() {
+            const input = document.getElementById('cnicInput').value;
+            if(input.length !== 13) {
+                alert('Please enter a valid 13-digit CNIC number.');
+                return;
+            }
+
+            document.getElementById('timerBox').style.display = 'block';
+            document.getElementById('resultBox').style.display = 'none';
+
+            let timeLeft = 5;
+            const countdownEl = document.getElementById('countdown');
+
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdownEl.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('timerBox').style.display = 'none';
+                    document.getElementById('resultBox').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
