@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pak SIM Ownership Verification Guide 2026 - Official PTA Standards</title>
     <meta name="description" content="Check SIM registration details on your CNIC safely. Learn official PTA 668 and 667 SMS verification standards without exposing personal data.">
-    <link rel="stylesheet" href="../css/style.css?v=2">
+    <link rel="stylesheet" href="../css/style.css?v=3">
 </head>
 <body>
 
@@ -21,144 +19,83 @@
                     <li><a href="sim-ownership.html" class="active">SIM Info</a></li>
                     <li><a href="dlims-punjab.html">DLIMS</a></li>
                     <li><a href="iesco-bill.html">Utility Bills</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container" style="margin-top: 30px; margin-bottom: 50px;">
+    <div class="container">
         
-        <!-- Search Tool Interface Box -->
-        <div class="card" style="max-width: 650px; margin: 0 auto 40px auto; text-align: center; padding: 30px;">
-            <div class="card-icon">📱</div>
-            <h2>Pak SIM Ownership & Verification Portal</h2>
-            <p>Enter your 13-digit CNIC (without hyphens) to initialize official verification steps.</p>
+        <!-- Main Content Header -->
+        <div class="card" style="margin-top: 20px;">
+            <h2>Pak SIM Ownership Verification Guide</h2>
+            <p>Enter your 13-digit CNIC to view official PTA verification steps safely.</p>
+            
+            <input type="text" id="cnicInput" placeholder="Enter CNIC (13 digits)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            <button onclick="startTimer()" class="btn" style="width: 100%; border: none; cursor: pointer;">Check Verification Steps</button>
 
-            <form id="simSearchForm" onsubmit="event.preventDefault(); startTimer();">
-                <input 
-                    type="text" 
-                    id="cnicInput" 
-                    placeholder="Enter CNIC (e.g. 3520212345671)" 
-                    maxlength="13"
-                    pattern="\d{13}"
-                    required
-                    style="width: 100%; padding: 14px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 16px; margin-bottom: 15px; outline: none;"
-                >
-                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; font-size: 16px;">
-                    Check Verification Guidelines
-                </button>
-            </form>
-
-            <!-- Monetization Timer Box -->
-            <div id="timerBox" style="display: none; margin-top: 25px; padding: 20px; background: #f8fafc; border-radius: 8px; border: 1px dashed #2563eb;">
-                <p style="color: #1e293b; font-weight: 600; margin-bottom: 10px;">Connecting to PTA Verification Gateway...</p>
-                <div id="countdown" style="font-size: 28px; font-weight: bold; color: #2563eb;">5</div>
-                <p style="font-size: 12px; color: #64748b; margin-top: 5px;">Generating step-by-step SMS verification codes...</p>
+            <!-- Timer Box -->
+            <div id="timerBox" style="display: none; margin-top: 15px; text-align: center; color: #2563eb; font-weight: bold;">
+                Processing official request... <span id="countdown">5</span>s
             </div>
 
-            <!-- Verification Instructions Output -->
-            <div id="resultBox" style="display: none; margin-top: 25px; padding: 20px; background: #ecfdf5; border-radius: 8px; border: 1px solid #10b981; text-align: left;">
-                <h4 style="color: #065f46; margin-bottom: 8px;">✔️ Verification Protocol Ready!</h4>
-                <p style="color: #047857; font-size: 14px; margin-bottom: 10px;">• Send your 13-digit CNIC to <strong>668</strong> via SMS to view your total registered SIM count across all Pakistani networks.</p>
-                <p style="color: #047857; font-size: 14px;">• Text <strong>MNP</strong> to <strong>667</strong> to verify the registered account name and MNP status of your current SIM card.</p>
+            <!-- Result Box -->
+            <div id="resultBox" style="display: none; margin-top: 15px; background: #e0f2fe; padding: 15px; border-radius: 6px;">
+                <p><strong>Official Method:</strong> Send your CNIC without dashes to <strong>668</strong> via SMS to get the total count of SIMs registered on your name.</p>
             </div>
         </div>
 
-        <!-- Section 1: Comparison Table (Unique & Clean) -->
-        <section class="seo-content-block">
-            <h2>Why Choose Official PTA Verification Over Unofficial Portals?</h2>
-            <p>Navigating mobile SIM verification requires strict data security. Below is a direct breakdown of why our guide-based verification model is safer than third-party tracking sites:</p>
-            
-            <div style="overflow-x: auto; margin: 20px 0;">
-                <table style="width: 100%; border-collapse: collapse; background: #fff; font-size: 14px; text-align: left;">
-                    <thead>
-                        <tr style="background-color: #2563eb; color: #fff;">
-                            <th style="padding: 12px; border: 1px solid #cbd5e1;">Feature Criteria</th>
-                            <th style="padding: 12px; border: 1px solid #cbd5e1;">Pak SIM Info (Official Standard)</th>
-                            <th style="padding: 12px; border: 1px solid #cbd5e1;">Paid / Unofficial Tracking Sites</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: 600;">Service Cost</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; color: #16a34a; font-weight: bold;">100% Free Public Access</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">Demands PKR 500 - 3000</td>
-                        </tr>
-                        <tr style="background-color: #f8fafc;">
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: 600;">Legal Compliance</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">PECA 2016 & PTA Compliant</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; color: #dc2626;">Violates Privacy Directives</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: 600;">Data Protection</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">Zero Search Logging</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">Stores & Sells User Queries</td>
-                        </tr>
-                        <tr style="background-color: #f8fafc;">
-                            <td style="padding: 10px; border: 1px solid #e2e8f0; font-weight: 600;">Information Accuracy</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">Real-Time Cellular Response</td>
-                            <td style="padding: 10px; border: 1px solid #e2e8f0;">Outdated Database Dumps</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Latest Posts Block -->
+        <div class="seo-content-block">
+            <div style="background-color: #ff0000; color: white; padding: 10px 15px; font-weight: bold; font-size: 18px; border-radius: 6px; margin-bottom: 15px;">
+                📈 Latest Posts
             </div>
-        </section>
-
-        <!-- Section 2: Core Platform Benefits (Unique Content) -->
-        <section class="seo-content-block">
-            <h2>Key Advantages of Using Our Official Guidelines</h2>
-            <ul style="margin-left: 20px; color: #475569; font-size: 15px;">
-                <li style="margin-bottom: 8px;"><strong>Protect Personal Privacy:</strong> Prevent unauthorized identity theft by routinely auditing SIM cards linked to your CNIC.</li>
-                <li style="margin-bottom: 8px;"><strong>No Account Creation:</strong> Access verification tools without registration, email logins, or mandatory mobile permissions.</li>
-                <li style="margin-bottom: 8px;"><strong>Multi-Network Coverage:</strong> Includes official SMS procedures for Jazz, Zong, Telenor, Ufone, and SCO connections.</li>
+            <ul style="list-style: none; padding: 0;">
+                <li style="border: 1px solid #e2e8f0; border-radius: 5px; margin-bottom: 10px; padding: 12px;"><a href="#" style="text-decoration: none; color: #1e293b; font-weight: 600;">PTA SIM Information System Check Online – Complete Guide 2026</a></li>
+                <li style="border: 1px solid #e2e8f0; border-radius: 5px; margin-bottom: 10px; padding: 12px;"><a href="#" style="text-decoration: none; color: #1e293b; font-weight: 600;">How to Check SIMs Registered on CNIC in Pakistan – Complete PTA Guide</a></li>
+                <li style="border: 1px solid #e2e8f0; border-radius: 5px; margin-bottom: 10px; padding: 12px;"><a href="#" style="text-decoration: none; color: #1e293b; font-weight: 600;">PTA SIM Check Code Information – Verify Your SIM Legally</a></li>
+                <li style="border: 1px solid #e2e8f0; border-radius: 5px; margin-bottom: 10px; padding: 12px;"><a href="#" style="text-decoration: none; color: #1e293b; font-weight: 600;">How to Confirm Your SIM Is PTA Verified – Legal Guide</a></li>
             </ul>
+        </div>
+
+        <!-- FAQs Section -->
+        <section class="seo-content-block">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+
+            <h3>What is the fastest way to check SIM owner details in Pakistan?</h3>
+            <p>The fastest method is sending <strong>MNP to 667</strong> from the SIM you want to verify. Within 5–10 seconds, you receive the registered owner name and network operator.</p>
+
+            <h3>How can I check all SIMs registered on my CNIC?</h3>
+            <p>Send your <strong>13-digit CNIC number to 668</strong> without dashes. You will receive a message showing the total number of SIMs registered across all networks.</p>
+
+            <h3>Is it legal to check SIM owner details online in Pakistan?</h3>
+            <p>Yes, but only through <strong>official PTA methods</strong> like SMS to 668, MNP to 667, or official PTA portals. Unofficial databases violate digital privacy laws (PECA 2016).</p>
         </section>
 
-        <!-- Section 3: Latest PTA Guides Grid (Different & Clean Design) -->
-        <section style="margin-top: 40px;">
-            <h3 style="margin-bottom: 20px; color: #0f172a; text-align: center;">Official PTA SIM Verification Knowledgebase</h3>
-            
-            <div class="grid-container">
-                <div class="card">
-                    <h3>How to Check Registered SIMs via 668 SMS</h3>
-                    <p>Learn how to send your CNIC to 668 and interpret the official PTA network count reply instantly.</p>
-                    <a href="#" class="btn">Read Complete Guide</a>
-                </div>
+    </div>
 
-                <div class="card">
-                    <h3>Verifying SIM Ownership Name via 667</h3>
-                    <p>Step-by-step tutorial on sending MNP to 667 to verify current active SIM account holder details.</p>
-                    <a href="#" class="btn">Read Complete Guide</a>
-                </div>
-
-                <div class="card">
-                    <h3>How to Block Unwanted or Illegal SIMs</h3>
-                    <p>Procedure to visit official telecom franchise outlets to surrender unauthorized SIMs from your CNIC.</p>
-                    <a href="#" class="btn">Read Complete Guide</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Clean Pakistani Footer -->
+    <!-- Footer Section -->
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Pak SIM Information Portal. All Rights Reserved.</p>
-            <p style="font-size: 12px; color: #64748b; margin-top: 5px;">Disclaimer: This portal provides educational guidelines following PTA public standards. We do not host or sell private database logs.</p>
-            <div class="footer-links" style="margin-top: 10px;">
-                <a href="../pages/privacy-policy.html">Privacy Policy</a> | 
-                <a href="../pages/disclaimer.html">Disclaimer</a> |
-                <a href="../pages/contact.html">Contact Us</a>
-            </div>
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p style="margin-bottom: 10px;">
+                <a href="../pages/about.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">About Us</a> | 
+                <a href="../pages/privacy-policy.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Privacy Policy</a> | 
+                <a href="../pages/disclaimer.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Disclaimer</a> | 
+                <a href="../pages/contact.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Contact Us</a>
+            </p>
+            <p style="color: #94a3b8; font-size: 13px;">&copy; 2026 Pak SIM Info. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Timer Script -->
+    <!-- JavaScript Timer Function -->
     <script>
         function startTimer() {
             const input = document.getElementById('cnicInput').value;
-            if(input.length !== 13) return;
+            if(input.length !== 13) {
+                alert('Please enter a valid 13-digit CNIC number.');
+                return;
+            }
 
             document.getElementById('timerBox').style.display = 'block';
             document.getElementById('resultBox').style.display = 'none';
@@ -178,5 +115,6 @@
             }, 1000);
         }
     </script>
+
 </body>
 </html>
