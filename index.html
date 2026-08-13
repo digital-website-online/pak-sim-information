@@ -3,18 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pak SIM Information & Utility Services Hub 2026</title>
-    <meta name="description" content="All-in-one portal for official SIM ownership guidelines, DLIMS driving license verification, and electricity bill checkers in Pakistan.">
+    <title>Pak SIM Info & Public Utility Services Portal 2026</title>
+    <meta name="description" content="All-in-one official public utility verification portal for Pakistan. Check SIM ownership, DLIMS driving license, utility bills, and vehicle status legally.">
     <link rel="stylesheet" href="css/style.css?v=3">
+    <style>
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #1e293b;
+            border-radius: 2px;
+        }
+        @media (max-width: 768px) {
+            .menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #ffffff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 15px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+        }
+        /* Grid Layout for Tools */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tool-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tool-card h3 { margin-top: 10px; margin-bottom: 8px; color: #0f172a; }
+        .tool-card p { font-size: 14px; color: #64748b; margin-bottom: 15px; }
+        .btn-link {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 10px 15px;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-link:hover { background-color: #1d4ed8; }
+    </style>
 </head>
 <body>
 
-    <!-- Header Navbar -->
+    <!-- Header Navigation -->
     <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Pak<span>SIM Info</span></a>
+        <div class="container nav-container" style="position: relative; display: flex; justify-content: space-between; align-items: center; padding: 15px;">
+            <a href="index.html" class="logo" style="font-weight: bold; font-size: 20px; text-decoration: none; color: #0f172a;">Pak<span style="color: #2563eb;">SIM Info</span></a>
+            
+            <!-- 3 Lines Hamburger Icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="tools/sim-ownership.html">SIM Info</a></li>
                     <li><a href="tools/dlims-punjab.html">DLIMS</a></li>
@@ -25,67 +93,124 @@
         </div>
     </header>
 
-    <!-- Hero Header -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>Pak SIM Information & Public Utility Portal</h1>
-            <p>Direct, legal, and 100% official verification guides and online service links across Pakistan.</p>
-        </div>
-    </section>
-
-    <!-- Main Grid Section -->
-    <main class="container">
-        <h2 class="section-title">Select Public Service Tool</h2>
+    <!-- Main Container -->
+    <div class="container" style="padding: 20px 15px;">
         
-        <div class="grid-container">
-            
-            <!-- Card 1: SIM Verification -->
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <h3>SIM Ownership Verification</h3>
-                <p>Check total SIMs registered against your CNIC using official PTA SMS methods (668 & 667).</p>
-                <a href="tools/sim-ownership.html" class="btn">Check SIM Ownership</a>
+        <!-- Hero Section -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="font-size: 26px; color: #0f172a; margin-bottom: 10px;">Pak SIM Information & Public Utility Portal</h1>
+            <p style="color: #64748b;">Direct, legal, and 100% official verification guides and online service links across Pakistan.</p>
+        </div>
+
+        <h2 style="font-size: 20px; color: #1e293b; border-bottom: 2px solid #2563eb; padding-bottom: 5px;">Select Public Service Tool</h2>
+
+        <!-- Tools Grid Section (Row 1, 2 & 3) -->
+        <div class="tools-grid">
+
+            <!-- Tool 1 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">📱</span>
+                    <h3>SIM Ownership Verification</h3>
+                    <p>Check total SIMs registered against your CNIC using official PTA SMS methods (668 & 667).</p>
+                </div>
+                <a href="tools/sim-ownership.html" class="btn-link">Check SIM Ownership</a>
             </div>
 
-            <!-- Card 2: DLIMS Driving Licence -->
-            <div class="card">
-                <div class="card-icon">🪪</div>
-                <h3>DLIMS Driving License</h3>
-                <p>Verify driving license details for Punjab, Sindh, KPK, and Islamabad traffic police portals.</p>
-                <a href="tools/dlims-punjab.html" class="btn">Verify License Status</a>
+            <!-- Tool 2 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">🪪</span>
+                    <h3>DLIMS Driving License</h3>
+                    <p>Verify driving license details for Punjab, Sindh, KPK, and Islamabad traffic police portals.</p>
+                </div>
+                <a href="tools/dlims-punjab.html" class="btn-link">Verify License Status</a>
             </div>
 
-            <!-- Card 3: Electricity Bills -->
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Electricity Bills Check</h3>
-                <p>Check duplicate bills for IESCO, PESCO, MEPCO, LESCO, and K-Electric online.</p>
-                <a href="tools/iesco-bill.html" class="btn">Check Electricity Bill</a>
+            <!-- Tool 3 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">💡</span>
+                    <h3>Electricity Utility Bills</h3>
+                    <p>Check and download duplicate online bills for IESCO, LESCO, K-Electric, FESCO, and MEPCO.</p>
+                </div>
+                <a href="tools/iesco-bill.html" class="btn-link">Check Electricity Bill</a>
+            </div>
+
+            <!-- Tool 4 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">🔥</span>
+                    <h3>SNGPL / SSGC Gas Bills</h3>
+                    <p>View duplicate gas bills online for Sui Northern and Sui Southern Gas Pipelines Limited.</p>
+                </div>
+                <a href="tools/gas-bill.html" class="btn-link">Check Gas Bill</a>
+            </div>
+
+            <!-- Tool 5 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">🚗</span>
+                    <h3>Vehicle Registration Verification</h3>
+                    <p>Verify motor vehicle online registration status via Excise & Taxation portals nationwide.</p>
+                </div>
+                <a href="tools/vehicle-verification.html" class="btn-link">Verify Vehicle Online</a>
+            </div>
+
+            <!-- Tool 6 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">🏢</span>
+                    <h3>NADRA CNIC Verification Guide</h3>
+                    <p>Learn step-by-step procedures for CNIC tracking, Pak-ID services, and family tree verification.</p>
+                </div>
+                <a href="tools/nadra-cnic.html" class="btn-link">NADRA CNIC Info</a>
+            </div>
+
+            <!-- Tool 7 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">🛂</span>
+                    <h3>Passport Status Tracking</h3>
+                    <p>Track your Machine Readable Passport (MRP) application status online via Directorate General Immigration.</p>
+                </div>
+                <a href="tools/passport-status.html" class="btn-link">Track Passport</a>
+            </div>
+
+            <!-- Tool 8 -->
+            <div class="tool-card">
+                <div>
+                    <span style="font-size: 24px;">📄</span>
+                    <h3>FBR Tax & NTN Verification</h3>
+                    <p>Verify Active Taxpayer Status (ATL) and NTN details legally through the official FBR Iris system.</p>
+                </div>
+                <a href="tools/fbr-ntn.html" class="btn-link">Verify NTN / ATL</a>
             </div>
 
         </div>
 
-        <!-- High-SEO Detailed Description (Taagri Content for Google Search) -->
-        <article class="seo-content-block">
-            <h2>About Pak SIM Information Portal</h2>
-            <p>Finding accurate and secure public utility services online in Pakistan can be difficult due to third-party tracking sites. <strong>Pak SIM Information Portal</strong> is designed to offer a clean, safe, and direct routing portal where citizens can access official verification resources without compromising their personal data.</p>
-            
-            <h3>PECA Compliance & Safe Verification Methods</h3>
-            <p>Our platform strictly adheres to the Prevention of Electronic Crimes Act (PECA 2016) guidelines. We do not store, scrape, or display unauthorized personal records. All instructions guide users directly to government-sanctioned channels such as PTA SMS portals (668/667) and official provincial DLIMS servers.</p>
-        </article>
-    </main>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Pak SIM Information Portal. All Rights Reserved.</p>
-            <div class="footer-links">
-                <a href="pages/privacy-policy.html">Privacy Policy</a> | 
-                <a href="pages/disclaimer.html">Disclaimer</a>
-            </div>
+    <footer style="margin-top: 40px; background-color: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            <p style="margin-bottom: 10px;">
+                <a href="pages/about.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">About Us</a> | 
+                <a href="pages/privacy-policy.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Privacy Policy</a> | 
+                <a href="pages/disclaimer.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Disclaimer</a> | 
+                <a href="pages/contact.html" style="color: #64748b; text-decoration: none; margin: 0 8px;">Contact Us</a>
+            </p>
+            <p style="color: #94a3b8; font-size: 13px;">&copy; 2026 Pak SIM Info. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </body>
 </html>
