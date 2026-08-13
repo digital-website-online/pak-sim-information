@@ -1,0 +1,113 @@
+tools/sim-ownership.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak SIM Ownership Verification Guide 2026</title>
+    <meta name="description" content="Check SIM ownership details and registered SIM count on your CNIC legally using official PTA SMS verification guidelines.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">Pak<span>SIM Info</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="sim-ownership.html" class="active">SIM Info</a></li>
+                    <li><a href="dlims-punjab.html">DLIMS</a></li>
+                    <li><a href="iesco-bill.html">Utility Bills</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container" style="margin-top: 40px; margin-bottom: 50px;">
+        
+        <!-- Search Tool Interface -->
+        <div class="card" style="max-width: 600px; margin: 0 auto 40px auto; text-align: center; padding: 35px;">
+            <div class="card-icon">📱</div>
+            <h2>Pak SIM Ownership Checker</h2>
+            <p>Enter your 13-digit CNIC (without dashes) to initialize official verification steps.</p>
+
+            <form id="simSearchForm" onsubmit="event.preventDefault(); startTimer();">
+                <input 
+                    type="text" 
+                    id="cnicInput" 
+                    placeholder="Enter CNIC (e.g. 3520212345671)" 
+                    maxlength="13"
+                    pattern="\d{13}"
+                    required
+                    style="width: 100%; padding: 14px; border: 2px solid #cbd5e1; border-radius: 8px; font-size: 16px; margin-bottom: 15px; outline: none;"
+                >
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; font-size: 16px;">
+                    Verify Ownership Steps
+                </button>
+            </form>
+
+            <!-- Ad-Monetization Timer Box -->
+            <div id="timerBox" style="display: none; margin-top: 25px; padding: 20px; background: #f8fafc; border-radius: 8px; border: 1px dashed #2563eb;">
+                <p style="color: #1e293b; font-weight: 600; margin-bottom: 10px;">Fetching Verification Guidelines...</p>
+                <div id="countdown" style="font-size: 28px; font-weight: bold; color: #2563eb;">5</div>
+                <p style="font-size: 12px; color: #64748b; margin-top: 5px;">Please wait while system prepares official gateway codes.</p>
+            </div>
+
+            <!-- Verification Instructions Output -->
+            <div id="resultBox" style="display: none; margin-top: 25px; padding: 20px; background: #ecfdf5; border-radius: 8px; border: 1px solid #10b981; text-align: left;">
+                <h4 style="color: #065f46; margin-bottom: 8px;">✔️ Verification Instructions Ready!</h4>
+                <p style="color: #047857; font-size: 14px; margin-bottom: 10px;">Send your CNIC to <strong>668</strong> via SMS to receive your registered SIM count.</p>
+                <p style="color: #047857; font-size: 14px;">Send <strong>MNP</strong> to <strong>667</strong> to check the registered owner name of your current SIM.</p>
+            </div>
+        </div>
+
+        <!-- High-SEO Article Content -->
+        <article class="seo-content-block">
+            <h2>Complete Guide to SIM Verification & CNIC Registration in Pakistan</h2>
+            <p>Ensuring that mobile connections registered under your CNIC are authorized is a fundamental step toward personal digital safety. Under PTA regulations, unauthorized SIM issuance is strictly monitored to prevent fraud and identity theft.</p>
+
+            <h3>How to Verify Registered SIMs via PTA 668 SMS Service</h3>
+            <p>The Pakistan Telecommunication Authority provides a central SMS portal for all mobile users across Jazz, Zong, Telenor, Ufone, and SCO networks. By sending your 13-digit CNIC to 668, the system retrieves real-time count logs from the central SIM verification database.</p>
+
+            <h3>Checking SIM Owner Name using MNP 667 Code</h3>
+            <p>If you have an active SIM card and need to verify the primary account holder's name and activation history, send "MNP" to 667. The network operator responds with the masked CNIC and registered subscriber title.</p>
+        </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Pak SIM Information Portal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Countdown Timer Script -->
+    <script>
+        function startTimer() {
+            const input = document.getElementById('cnicInput').value;
+            if(input.length !== 13) return;
+
+            document.getElementById('timerBox').style.display = 'block';
+            document.getElementById('resultBox').style.display = 'none';
+
+            let timeLeft = 5;
+            const countdownEl = document.getElementById('countdown');
+
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdownEl.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('timerBox').style.display = 'none';
+                    document.getElementById('resultBox').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
