@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNGPL & SSGC Online Gas Bill Verification 2026</title>
+    <meta name="description" content="Check and download SNGPL and SSGC duplicate gas bills online using your Account Number or Consumer ID legally.">
+    <link rel="stylesheet" href="../css/style.css?v=5">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+        .wrapper { max-width: 1000px; margin: 20px auto; padding: 0 16px 40px 16px; }
+        .site-header { background: #fff; border-bottom: 1px solid #e2e8f0; padding: 15px 20px; position: sticky; top: 0; z-index: 1000; }
+        .brand-logo { font-size: 24px; font-weight: 800; color: #0f172a; text-decoration: none; }
+        .brand-logo span { color: #2563eb; }
+        .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 22px; margin-top: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .input-box { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; }
+        .btn-action { display: block; width: 100%; background-color: #2563eb; color: #ffffff; text-align: center; padding: 12px 0; border-radius: 7px; text-decoration: none; font-weight: 600; font-size: 15px; border: none; cursor: pointer; }
+        .btn-action:hover { background-color: #1d4ed8; }
+        .btn-back { display: inline-block; background: #64748b; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header class="site-header">
+        <div style="max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="../index.html" class="brand-logo">Pak<span>SIM Info</span></a>
+            <a href="../index.html" class="btn-back">← Home</a>
+        </div>
+    </header>
+
+    <div class="wrapper">
+
+        <!-- Tool Card -->
+        <div class="card">
+            <h1 style="font-size: 22px; color: #0f172a;">🔥 SNGPL / SSGC Online Gas Bill Verification</h1>
+            <p style="color: #64748b; font-size: 14px; margin-top: 4px;">Enter your 10-digit or 11-digit Consumer ID/Account Number below to check your duplicate bill guide.</p>
+
+            <input type="text" id="accountNo" class="input-box" placeholder="Enter Consumer Account Number (e.g. 1234567890)">
+            <button onclick="checkGasBill()" class="btn-action">Check Gas Bill Online</button>
+
+            <!-- Loading Timer -->
+            <div id="timerBox" style="display: none; margin-top: 15px; text-align: center; color: #2563eb; font-weight: 700;">
+                Connecting to official Gas Portal... <span id="countdown">5</span>s
+            </div>
+
+            <!-- Result Guide -->
+            <div id="resultBox" style="display: none; margin-top: 20px; background: #eff6ff; padding: 16px; border-radius: 8px; border: 1px solid #bfdbfe;">
+                <h3 style="color: #1e3a8a; font-size: 16px; margin-bottom: 8px;">Official Portal Steps:</h3>
+                <p style="font-size: 14px; color: #1e40af;">You can directly access your duplicate bill via official portals:</p>
+                <ul style="margin: 10px 0 0 20px; font-size: 14px; color: #1e40af;">
+                    <li><strong>Sui Northern (SNGPL):</strong> Visit <code>www.sngpl.com.pk</code> for Punjab, KPK & Islamabad.</li>
+                    <li><strong>Sui Southern (SSGC):</strong> Visit <code>www.ssgc.com.pk</code> for Sindh & Balochistan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Article Section -->
+        <div class="card">
+            <h2 style="font-size: 18px; color: #0f172a; margin-bottom: 10px;">How to Find Your Account ID?</h2>
+            <p style="font-size: 14px; color: #475569;">Your Consumer ID or Account Number is a unique 10 to 11 digit code printed on the top left corner of your physical monthly gas bill statement. Using this number allows you to print or view pending payment amounts and due dates instantly.</p>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background-color: #ffffff; border-top: 1px solid #e2e8f0; margin-top: 40px;">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center; padding: 20px 16px;">
+            <p style="color: #94a3b8; font-size: 12px;">&copy; 2026 Pak SIM Info. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Timer -->
+    <script>
+        function checkGasBill() {
+            const acc = document.getElementById('accountNo').value;
+            if(acc.trim().length < 8) {
+                alert('Please enter a valid Account Number.');
+                return;
+            }
+
+            document.getElementById('timerBox').style.display = 'block';
+            document.getElementById('resultBox').style.display = 'none';
+
+            let timeLeft = 5;
+            const countdownEl = document.getElementById('countdown');
+
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdownEl.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('timerBox').style.display = 'none';
+                    document.getElementById('resultBox').style.display = 'block';
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+</html>
